@@ -8,4 +8,4 @@ def test_ingredient():
     assert hash(Ingredient("farinha")) == hash(Ingredient("farinha"))
     assert hash(Ingredient("farinha")) != hash(Ingredient("queijo mussarela"))
     assert Ingredient("farinha") == Ingredient("farinha")
-    assert Ingredient("farinha") != Ingredient("farinha")
+    assert Ingredient("farinha") != Ingredient("queijo mussarela")
