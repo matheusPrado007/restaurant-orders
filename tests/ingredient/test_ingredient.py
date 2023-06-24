@@ -1,5 +1,6 @@
 from src.models.ingredient import (
     Ingredient,
+    Restriction,
 )  # noqa: F401, E261, E501 # noqa: F401, E261, E501
 
 
@@ -11,3 +12,4 @@ def test_ingredient():
     assert Ingredient("farinha") != Ingredient("queijo mussarela")
     assert repr(Ingredient("bacon")) == "Ingredient('bacon')"
     assert Ingredient("bacon").name == "bacon"
+    assert Ingredient("bacon").restrictions != {Restriction.GLUTEN}
