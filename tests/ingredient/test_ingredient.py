@@ -7,3 +7,4 @@ from src.models.ingredient import (
 def test_ingredient():
     assert hash(Ingredient("farinha")) == hash(Ingredient("farinha"))
     assert hash(Ingredient("farinha")) != hash(Ingredient("queijo mussarela"))
+    assert Ingredient("farinha") == Ingredient("farinha")
