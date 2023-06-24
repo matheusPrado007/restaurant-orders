@@ -13,3 +13,4 @@ def test_ingredient():
     assert repr(Ingredient("bacon")) == "Ingredient('bacon')"
     assert Ingredient("bacon").name == "bacon"
     assert Ingredient("bacon").restrictions != {Restriction.GLUTEN}
+    assert set(Ingredient("farinha").restrictions) == {Restriction.GLUTEN}
