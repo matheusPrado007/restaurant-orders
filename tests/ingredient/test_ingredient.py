@@ -1,6 +1,8 @@
-from src.models.ingredient import Ingredient  # noqa: F401, E261, E501
+from src.models.ingredient import (
+    Ingredient,
+)  # noqa: F401, E261, E501 # noqa: F401, E261, E501
 
 
 # Req 1
 def test_ingredient():
-    pass
+    assert hash(Ingredient("farinha")) == hash(Ingredient("farinha"))
