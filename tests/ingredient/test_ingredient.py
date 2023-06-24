@@ -10,3 +10,4 @@ def test_ingredient():
     assert Ingredient("farinha") == Ingredient("farinha")
     assert Ingredient("farinha") != Ingredient("queijo mussarela")
     assert repr(Ingredient("bacon")) == "Ingredient('bacon')"
+    assert Ingredient("bacon").name == "bacon"
