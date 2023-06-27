@@ -26,4 +26,21 @@ class MenuBuilder:
 
     # Req 4
     def get_main_menu(self, restriction=None) -> List[Dict]:
-        pass
+        try:
+            return [
+                {
+                    "dish_name": dish.name,
+                    "ingredients": dish.get_ingredients(),
+                    "price": dish.price,
+                    "restrictions": dish.get_restrictions(),
+                }
+                for dish in self.menu_data.dishes
+                if restriction not in dish.get_restrictions()
+                and all(
+                    ingredient in self.inventory.inventory
+                    for ingredient in dish.get_ingredients()
+                )
+            ]
+        except Exception as e:
+            print(f"Ocorreu um erro ao obter o menu principal: {e}")
+            return []
